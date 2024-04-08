@@ -312,6 +312,7 @@ async def to_code(config):
     cg.add(var.set_password(config[CONF_PASSWORD]))
     if CONF_CLIENT_ID in config:
         cg.add(var.set_client_id(config[CONF_CLIENT_ID]))
+    cg.add(var.set_clean_session(True))
 
     discovery = config[CONF_DISCOVERY]
     discovery_retain = config[CONF_DISCOVERY_RETAIN]
