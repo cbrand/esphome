@@ -62,6 +62,7 @@ class WaveshareEPaperBase : public display::DisplayBuffer,
   GPIOPin *dc_pin_;
   GPIOPin *busy_pin_{nullptr};
   virtual uint32_t idle_timeout_() { return 1000u; }  // NOLINT(readability-identifier-naming)
+  bool initial_component_update_done = false;
 };
 
 class WaveshareEPaper : public WaveshareEPaperBase {

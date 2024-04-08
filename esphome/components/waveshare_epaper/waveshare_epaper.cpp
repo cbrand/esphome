@@ -165,7 +165,11 @@ bool WaveshareEPaperBase::wait_until_idle_() {
 }
 void WaveshareEPaperBase::update() {
   this->do_update_();
-  this->display();
+  if (initial_component_update_done) {
+    this->display();
+  } else {
+    initial_component_update_done = true;
+  }
 }
 void WaveshareEPaper::fill(Color color) {
   // flip logic
