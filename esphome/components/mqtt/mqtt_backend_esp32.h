@@ -154,7 +154,7 @@ class MQTTBackendESP32 final : public MQTTBackend {
   bool lwt_retain_;
   std::string client_id_;
   uint16_t keep_alive_;
-  bool clean_session_;
+  bool clean_session_ = true;
   optional<std::string> ca_certificate_;
   optional<std::string> cl_certificate_;
   optional<std::string> cl_key_;
