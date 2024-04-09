@@ -6,6 +6,7 @@
 
 namespace esphome {
 namespace waveshare_epaper {
+bool initial_component_update_done = false;
 
 class WaveshareEPaperBase : public display::DisplayBuffer,
                             public spi::SPIDevice<spi::BIT_ORDER_MSB_FIRST, spi::CLOCK_POLARITY_LOW,
@@ -62,7 +63,6 @@ class WaveshareEPaperBase : public display::DisplayBuffer,
   GPIOPin *dc_pin_;
   GPIOPin *busy_pin_{nullptr};
   virtual uint32_t idle_timeout_() { return 1000u; }  // NOLINT(readability-identifier-naming)
-  bool initial_component_update_done = false;
 };
 
 class WaveshareEPaper : public WaveshareEPaperBase {
