@@ -6,6 +6,7 @@
 
 namespace esphome {
 namespace waveshare_epaper {
+bool initial_component_update_done = false;
 
 static const char *const TAG = "waveshare_epaper";
 
@@ -164,11 +165,11 @@ bool WaveshareEPaperBase::wait_until_idle_() {
   return true;
 }
 void WaveshareEPaperBase::update() {
-  if (esphome::waveshare_epaper::initial_component_update_done) {
+  if (initial_component_update_done) {
     this->do_update_();
     this->display();
   } else {
-    esphome::waveshare_epaper::initial_component_update_done = true;
+    initial_component_update_done = true;
   }
 }
 void WaveshareEPaper::fill(Color color) {

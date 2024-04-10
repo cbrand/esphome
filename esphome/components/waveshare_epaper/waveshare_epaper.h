@@ -6,7 +6,6 @@
 
 namespace esphome {
 namespace waveshare_epaper {
-bool initial_component_update_done = false;
 
 class WaveshareEPaperBase : public display::DisplayBuffer,
                             public spi::SPIDevice<spi::BIT_ORDER_MSB_FIRST, spi::CLOCK_POLARITY_LOW,
