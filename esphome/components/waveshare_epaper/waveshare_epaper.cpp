@@ -164,11 +164,11 @@ bool WaveshareEPaperBase::wait_until_idle_() {
   return true;
 }
 void WaveshareEPaperBase::update() {
-  if (initial_component_update_done) {
+  if (this->initial_component_update_done) {
     this->do_update_();
     this->display();
   } else {
-    initial_component_update_done = true;
+    this->initial_component_update_done = true;
   }
 }
 void WaveshareEPaper::fill(Color color) {
