@@ -35,6 +35,8 @@ class WaveshareEPaperBase : public display::DisplayBuffer,
   void on_safe_shutdown() override;
 
  protected:
+  bool initial_component_update_done = false;
+
   bool wait_until_idle_();
 
   void setup_pins_();
